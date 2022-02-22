@@ -8,15 +8,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.AbstractController;
 
-//@Controller
-public class AddController extends AbstractController 
+@Controller
+public class AddController
 {
-	@Override
-	protected ModelAndView handleReqestInternal(HttpServletRequest request,
-			HttpServletResponse response) throws Exception
+	@RequestMapping("/welcome")
+	public ModelAndView helloworld()
 	{
-		ModelAndView modelandview = new ModelAndView("welcome");
-		
-		return modelandview;
+		ModelAndView model = new ModelAndView("display");
+		model.addObject("msg","Hello Sagar!");
+		return model;
 	}
 }
